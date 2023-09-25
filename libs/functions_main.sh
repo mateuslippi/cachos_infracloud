@@ -63,7 +63,12 @@ function _varnish_backend_list () {
 }
 
 function _nginx_logs () {
-    awk '{print $12"\tData: "$1"\tIP: "$3"\tURL: "$5$7}' /opt/logs/cachos/cachos-nginx-thanos/cachos-thanos_access.log | grep -v "^*" | grep -v "^[234]"
+    echo -e "\nIPS ofensivos:\n"
+    awk '{print "IP: " $3}' /opt/cachos/nginx-thanos/logs/cachos-thanos_access.log | sort | uniq -c | sort -nr | head -n 10
+    echo -e "\nURL's com erro 50x:\n"
+    awk '$12 ~ /^50/ {print $5}' /opt/cachos/nginx-thanos/logs/cachos-thanos_access.log | sort | uniq -c | sort -nr | head -n 10
+    echo -e "\nURI'S com erro 50x:\n"
+    awk '$12 ~ /^50/ {print $9}' /opt/cachos/nginx-thanos/logs/cachos-thanos_access.log | sort | uniq -c | sort -nr | head -n 10
 }
 
 #Validações
