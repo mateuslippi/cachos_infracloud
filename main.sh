@@ -18,10 +18,12 @@
 # Histórico:
 #    v1.0 07/09/2023, Mateus: Preparado para produção.
 # ------------------------------------------------------------------------ #
-source ~/cachos_infracloud/libs/functions_deps.sh
-source ~/cachos_infracloud/libs/functions_main.sh
 # -----------------------VARIÁVEIS ---------------------------------------- #
-
+SCRIPT_DIR="$( cd "$( dirname "$(readlink -f $"0")" )" && pwd )"
+LIBS_DIR="$SCRIPT_DIR/cachos_infracloud/libs"
+# -----------------------IMPORTS ---------------------------------------- #
+source "$LIBS_DIR/functions_deps.sh"
+source "$LIBS_DIR/functions_main.sh"
 # ------------------------------- TESTES ---------------------------------- #
 [ -z "$(which sshpass)" ] && _install_sshpass
 # ------------------------------- FUNÇÕES --------------------------------- #
