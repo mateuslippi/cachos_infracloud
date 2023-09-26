@@ -12,7 +12,7 @@ function _find_distribution () {
 }
 
 function _deps () {
-    echo -e "\nPrecisamos instalar as dependências: \n"
+    echo -e "\nPrecisamos configurar/instalar as dependências: \n"
 }
 
 function _error_deps () {
