@@ -19,16 +19,10 @@
 #    v1.0 07/09/2023, Mateus: Preparado para produção.
 # ------------------------------------------------------------------------ #
 # -----------------------VARIÁVEIS ---------------------------------------- #
-SCRIPT_DIR="$( cd "$( dirname "$(readlink -f $"0")" )" && pwd )"
-PROJECT_DIR="$(basename $SCRIPT_DIR)"
-LIBS_DIR="$SCRIPT_DIR/libs"
-
-if [ "$PROJECT_DIR" != "cachos_infracloud" ]; then
-    LIBS_DIR="$SCRIPT_DIR/cachos_infracloud/libs"
-fi
+LINK_DIR="$(dirname "$(readlink -f "$0")")"
 # -----------------------IMPORTS ---------------------------------------- #
-source "$LIBS_DIR/functions_deps.sh"
-source "$LIBS_DIR/functions_main.sh"
+source "$LINK_DIR/libs/functions_deps.sh"
+source "$LINK_DIR/libs/functions_main.sh"
 # ------------------------------- TESTES GERAIS ---------------------------------- #
 [ -z "$(which sshpass)" ] && _install_sshpass
 # ------------------------------- FUNÇÕES --------------------------------- #
