@@ -20,7 +20,8 @@
 # ------------------------------------------------------------------------ #
 # -----------------------VARIÁVEIS ---------------------------------------- #
 SCRIPT_DIR="$( cd "$( dirname "$(readlink -f $"0")" )" && pwd )"
-LIBS_DIR="$SCRIPT_DIR/cachos_infracloud/libs"
+PROJECT_DIR="($basename "$SCRIPT_DIR")"
+LIBS_DIR="$PROJECT_DIR/libs"
 # -----------------------IMPORTS ---------------------------------------- #
 source "$LIBS_DIR/functions_deps.sh"
 source "$LIBS_DIR/functions_main.sh"
