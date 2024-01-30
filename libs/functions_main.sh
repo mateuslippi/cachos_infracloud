@@ -49,7 +49,7 @@ function _varnish_ncsa_logs () {
                 
                 logs com filtro: $(awk '{print $9"\t"$4"\t"$7}' /opt/logs/cachos/default_log | tr -d [ | grep -v -e '^[[:space:]]*$' | head -n25)"
         else
-            _error "Houve um problema ao tentar reiniciar o serviço \"varnishncsa.service.\"Iniciar manualmente."
+            _error "Houve um problema ao tentar reiniciar o serviço \"varnishncsa.service.\"Iniciar manualmente.""
         fi
     fi
 }
